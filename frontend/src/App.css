@@ -1,0 +1,249 @@
+/* Minimal styling for the FundFlow dashboard. No UI framework. */
+:root {
+  font-family: system-ui, sans-serif;
+  color: #1f2933;
+  background: #ffffff;
+}
+
+body {
+  margin: 0;
+}
+
+.app {
+  margin: 2rem;
+}
+
+.app-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.app-header h1 {
+  margin: 0;
+}
+
+.app-header p {
+  margin: 0.25rem 0 0;
+}
+
+.org-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.org-switcher select {
+  font: inherit;
+  padding: 0.25rem 0.5rem;
+}
+
+.panel {
+  margin-bottom: 2rem;
+}
+
+.panel h2 {
+  font-size: 1.15rem;
+  margin: 0 0 0.75rem;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+th,
+td {
+  border-bottom: 1px solid #d9e2ec;
+  padding: 0.45rem 0.6rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #f5f7fa;
+  font-weight: 600;
+}
+
+.numeric {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.muted {
+  color: #616e7c;
+}
+
+.reason {
+  margin: 0;
+  color: #3e4c59;
+}
+
+.plain-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  background: #e4e7eb;
+}
+
+.badge-suggested,
+.badge-partially_funded {
+  background: #fff3c4;
+}
+
+.badge-needs_review {
+  background: #ffe3e3;
+}
+
+.badge-reconciled,
+.badge-funded {
+  background: #d3f9d8;
+}
+
+.status {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  background: #f5f7fa;
+}
+
+.status-error {
+  background: #ffe3e3;
+  color: #8a1c1c;
+}
+
+.link-button {
+  font: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.upload-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.upload-controls button {
+  font: inherit;
+  padding: 0.3rem 0.9rem;
+}
+
+.import-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.import-summary caption {
+  text-align: left;
+  font-weight: 600;
+  padding-bottom: 0.4rem;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+  min-width: 11rem;
+}
+
+.action-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.action-target {
+  font-size: 0.8rem;
+  color: #616e7c;
+  min-width: 4.5rem;
+}
+
+.actions button {
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.2rem 0.6rem;
+  cursor: pointer;
+}
+
+.actions button:disabled {
+  cursor: progress;
+}
+
+.actions button.secondary {
+  color: #52606d;
+}
+
+.action-feedback {
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.status-success {
+  background: #d3f9d8;
+  color: #1e4620;
+}
+
+.status-conflict {
+  background: #fff3c4;
+  color: #5c4400;
+}
+
+/* Same-organization refresh: rows stay visible but are marked as updating. */
+.is-refreshing {
+  opacity: 0.6;
+  transition: opacity 0.15s;
+}
+
+/* Programmatically focused result regions (tabIndex -1) still show where focus went. */
+.action-feedback:focus,
+.import-result:focus {
+  outline: 2px solid #2f6fdd;
+  outline-offset: 2px;
+}
